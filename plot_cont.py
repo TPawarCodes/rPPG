@@ -101,6 +101,7 @@ class DynamicPlot():
         saves numpy array of rPPG signal as pulse
         """
         np.save('pulse', self.pulse_to_plot)
+        plt.show()
         
 
 
