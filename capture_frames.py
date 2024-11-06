@@ -91,7 +91,7 @@ class CaptureFrames():
     
     def terminate(self, camera):
         self.pipe.send(None)
-        cv2.destroyAllWindows()
+        cv2.waitKey()
         camera.release()
         
 
