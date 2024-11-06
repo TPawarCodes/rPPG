@@ -63,4 +63,5 @@ if __name__=="__main__":
     source = args.source
     runPOS = RunPOS(270, args.framerate, args.batchsize, True)
     runPOS(source)
+    input("Press Enter to exit...")
     
