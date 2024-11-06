@@ -33,6 +33,7 @@ class DynamicPlot():
         
         plt.tight_layout()
         plt.show()
+        cv2.waitKey()
     
     def __call__(self, pipe):
         if self.launched == False: self.launch_fig()
