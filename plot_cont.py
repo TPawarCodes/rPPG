@@ -38,6 +38,7 @@ class DynamicPlot():
         if self.launched == False: self.launch_fig()
         self.pipe = pipe
         self.call_back()
+        plt.show()
 
     def call_back(self):
         while True:
@@ -49,10 +50,12 @@ class DynamicPlot():
                 self.update_no_face()
             else:    
                 self.update_data(data[0], data[1])
+        plt.show()
 
     def update_no_face(self):
         hr_text = 'HR: NaN'
         self.hr_texts.set_text(hr_text)
+        plt.show()
 
         scaled = np.zeros(10)
         for i in range(0, len(scaled)):
@@ -64,7 +67,7 @@ class DynamicPlot():
             self.hrs_to_plot[-1] = 0
             self.update_plot(self.hr_axis, self.hrs_to_plot)
             self.re_draw()
-
+        plt.show()
     def update_data(self, p, hrs):
 
         hr_fft = moving_avg(hrs, 3)[-1] if len(hrs) > 5 else hrs[-1]
@@ -84,17 +87,19 @@ class DynamicPlot():
             self.hrs_to_plot[-1] = hr_fft
             self.update_plot(self.hr_axis, self.hrs_to_plot)
             self.re_draw()
-
-
+        plt.show()
+        
     def update_plot(self, axis, y_values):
         line = axis.lines[0]
         line.set_xdata(np.arange(len(y_values)))
         line.set_ydata(y_values)
         axis.relim()
         axis.autoscale_view()
+        plt.show()
     def re_draw(self):
         self.fig.canvas.draw()
         self.fig.canvas.flush_events()
+        plt.show()
     
     def terminate(self):
         """
