@@ -5,7 +5,7 @@ matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 from utils import *
 from scipy.signal import medfilt, decimate
-
+plt.ion()
 class DynamicPlot():    
     def __init__(self, signal_size, bs):
         self.batch_size = bs
