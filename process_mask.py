@@ -167,7 +167,7 @@ class ProcessMasks():
 
         plt.tight_layout() 
         plt.savefig(f'results.png')
-        plt.close()
+
 
             
                 
