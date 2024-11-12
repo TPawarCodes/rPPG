@@ -32,6 +32,7 @@ class DynamicPlot():
         
         plt.tight_layout()
         plt.show()
+        plt.pause()
 
     
     def __call__(self, pipe):
